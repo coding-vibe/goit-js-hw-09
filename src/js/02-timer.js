@@ -1,7 +1,7 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import "flatpickr/dist/themes/dark.css";
-import Notiflix from 'notiflix';
+import {Notify} from 'notiflix';
 
 // Instances
 const refs = {
@@ -20,7 +20,7 @@ const options = {
         const todayDate = options.defaultDate;
         const selectedDate = selectedDates[0];
         const deltaDates = selectedDate - todayDate;
-        deltaDates < 0 ? Notiflix.Notify.failure('Please choose a date in the future') : refs.btnStart.disabled = false;
+        deltaDates < 0 ? Notify.failure('Please choose a date in the future') : refs.btnStart.disabled = false;
     },
 };
 const calendar = flatpickr(refs.input, options);
